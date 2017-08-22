@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Offshore Guide</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h2>Binge on the Beach</h2>
+   <ion-item>
+      <ion-icon name="" item-left></ion-icon>
+Buoy Information 1, these are the conditions
+    </ion-item>
+   <ion-item>
+      <ion-icon name="" item-left></ion-icon>
+Buoy Information 2, these are the conditions
+    </ion-item>
+
+<agm-map    [latitude]="lat" [longitude]="lng"  >
+   <agm-marker *ngFor="let marker of markers" [label]="marker.Label"
+                                              [zIndex]=100
+
+                                              [latitude]="marker.LocationLatitude"
+                                              [longitude]="marker.LocationLongitude"
+                                              [iconUrl]="marker.WindDirIcon"
+                                              (markerClick)="selectedAStation(marker.Label)"  >
+  <agm-info-window>
+	 	<strong [ngStyle]="{'color': lblcolor}">Location: {{marker.Location}}<br>WindCondition: {{marker.LocationWindCondition}}<br>Wind Direction: {{marker.WindDirText}}<br>Wind Speed: {{marker.WindSpeed}}<br></strong></agm-info-window>
+   </agm-marker>
+
+</agm-map>
+<select required    (change)="updateMap(selectedValue)" [(ngModel)]="selectedValue"  id="state" name="state" style="height:2.6em;" >
+    <option *ngFor="let item of locationId" [ngValue]="item.LocationKey" >{{item.LocationName}}</option>
+</select>
+</ion-content>
+
