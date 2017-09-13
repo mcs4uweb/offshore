@@ -89,6 +89,7 @@ export class SpeakerListPage {
   }
 
   openContact(speaker: any) {
+    debugger
     let mode = this.config.get('mode');
 
     let actionSheet = this.actionSheetCtrl.create({

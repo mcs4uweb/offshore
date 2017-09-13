@@ -1,6 +1,10 @@
+
+$header-padding: 40px;
+$bg_color : #434954;
+
 .about-header {
-  background-color: #434954;
-  padding: 16px;
+  background-color: color($colors, secondary);
+  padding: $header-padding;
   width: 100%;
   min-height: 150px;
   text-align: center;

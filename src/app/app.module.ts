@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { AgmCoreModule } from '@agm/core';
@@ -8,6 +9,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 import { ConferenceApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
+import { ContactsPage } from '../pages/contacts/contacts';
 import { PopoverPage } from '../pages/about-popover/about-popover';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
@@ -19,6 +21,7 @@ import { SessionDetailPage } from '../pages/session-detail/session-detail';
 import { SignupPage } from '../pages/signup/signup';
 import { SpeakerDetailPage } from '../pages/speaker-detail/speaker-detail';
 import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
+import { InventoryDetailPage } from '../pages/inventory-detail/inventory-detail';
 import { TabsPage } from '../pages/tabs-page/tabs-page';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { SupportPage } from '../pages/support/support';
@@ -27,11 +30,18 @@ import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 import { DataServiceProvider } from '../providers/data-service/data-service';
 
+import { AngularFireModule } from 'angularfire2';
+/* import { AngularFireDatabase } from 'angularfire2/database'; */
+ 
+ import {environment} from './environments/environment'; 
+ 
+
 
 @NgModule({
   declarations: [
     ConferenceApp,
     AboutPage,
+    ContactsPage,
     AccountPage,
     LoginPage,
     EarthQuakePage,
@@ -43,13 +53,19 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
     SignupPage,
     SpeakerDetailPage,
     SpeakerListPage,
+    InventoryDetailPage,
     TabsPage,
     TutorialPage,
-    SupportPage
+    SupportPage 
   ],
   imports: [
     BrowserModule,
+   AngularFireModule.initializeApp(environment.firebase),
+     
+   
+     
     HttpModule,
+   
     IonicModule.forRoot(ConferenceApp, {}, {
       links: [
         { component: TabsPage, name: 'TabsPage', segment: 'tabs-page' },
@@ -58,8 +74,10 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
         { component: ScheduleFilterPage, name: 'ScheduleFilter', segment: 'scheduleFilter' },
         { component: SpeakerListPage, name: 'SpeakerList', segment: 'speakerList' },
         { component: SpeakerDetailPage, name: 'SpeakerDetail', segment: 'speakerDetail/:speakerId' },
+        { component: InventoryDetailPage, name: 'InventoryDetail', segment: 'inventoryDetail/:category' },
         { component: EarthQuakePage, name: 'Map', segment: 'map' },
         { component: MapsPage, name: 'Maps', segment: 'maps' },
+        { component: ContactsPage, name: 'Contacts', segment: 'contacts' },
         { component: AboutPage, name: 'About', segment: 'about' },
         { component: TutorialPage, name: 'Tutorial', segment: 'tutorial' },
         { component: SupportPage, name: 'SupportPage', segment: 'support' },
@@ -70,7 +88,7 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
     }),
     IonicStorageModule.forRoot(),
     AgmCoreModule.forRoot({
-        apiKey: 'AIzaSyBfKqdlXT9NV-Is6nX07WTVJsH-Gd6tD8U'
+        apiKey: 'AIzaSyBfKqdlXT9NV-Is6nX07WTVJsH-Gd6tD8U'   
     }),
 
   ],
@@ -78,6 +96,7 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
   entryComponents: [
     ConferenceApp,
     AboutPage,
+    ContactsPage,
     AccountPage,
     LoginPage,
     EarthQuakePage,
@@ -89,6 +108,7 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
     SignupPage,
     SpeakerDetailPage,
     SpeakerListPage,
+    InventoryDetailPage,
     TabsPage,
     TutorialPage,
     SupportPage

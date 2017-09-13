@@ -57,6 +57,12 @@ options = new RequestOptions({
      /* return this.http.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime='+returnDate()+'&endtime='+returnDate()+'&minlatitude=32&minlongitude=-118').map((response: Response) => response.json());*/
         return this.http.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime='+start+'&endtime='+end+'&minlatitude=32&minlongitude=-118').map((response: Response) => response.json());
     }
+
+getInventory()
+{
+
+}
+
  /*   getUser(): Observable<any> {
           return this.http.get(this.baseUrl + '/api/TowerService/Getuser/mhubbs').map((response: Response) => response.json());
 

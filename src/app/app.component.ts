@@ -1,10 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-
 import { Events, MenuController, Nav, Platform } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { Storage } from '@ionic/storage';
-
 import { AboutPage } from '../pages/about/about';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
@@ -15,10 +12,13 @@ import { TabsPage } from '../pages/tabs-page/tabs-page';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 /*import { SchedulePage } from '../pages/schedule/schedule';*/
 import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
+import { ContactsPage } from '../pages/contacts/contacts';
 import { SupportPage } from '../pages/support/support';
-
+ 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
+ 
+import { AngularFireDatabase  } from 'angularfire2/database';
 
 export interface PageInterface {
   title: string;
@@ -45,9 +45,10 @@ export class ConferenceApp {
   appPages: PageInterface[] = [
    /* { title: 'Schedule', name: 'TabsPage', component: TabsPage, tabComponent: SchedulePage, index: 0, icon: 'calendar' },*/
    { title: 'Maps', name: 'TabsPage', component: TabsPage, tabComponent: MapsPage, index: 0, icon: 'map' },
-   { title: 'Contacts', name: 'TabsPage', component: TabsPage, tabComponent: SpeakerListPage, index: 1, icon: 'contacts' },
+   { title: 'Contacts', name: 'TabsPage', component: TabsPage, tabComponent: ContactsPage, index: 1, icon: 'contacts' },
    { title: 'Earth Quake', name: 'TabsPage', component: TabsPage, tabComponent: EarthQuakePage, index:2, icon: 'planet' },
-   { title: 'About', name: 'TabsPage', component: TabsPage, tabComponent: AboutPage, index: 3, icon: 'information-circle' }
+   { title: 'About', name: 'TabsPage', component: TabsPage, tabComponent: AboutPage, index: 3, icon: 'information-circle' },
+   { title: 'List', name: 'TabsPage', component: TabsPage, tabComponent: SpeakerListPage, index: 4, icon: 'information-circle' }
   ];
   loggedInPages: PageInterface[] = [
     { title: 'Account', name: 'AccountPage', component: AccountPage, icon: 'person' },
@@ -68,7 +69,8 @@ export class ConferenceApp {
     public platform: Platform,
     public confData: ConferenceData,
     public storage: Storage,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
+    public db: AngularFireDatabase
   ) {
 
     // Check if the user has already seen the tutorial

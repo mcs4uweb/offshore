@@ -1,6 +1,6 @@
 {
-  "name": "Ionic Conference",
-  "short_name": "Ionic Conf",
+  "name": "Offshore",
+  "short_name": "Offshore App",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
