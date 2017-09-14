@@ -1,40 +1,60 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
+  import { BrowserModule } from '@angular/platform-browser';
+  import { HttpModule } from '@angular/http';
 
-import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { AgmCoreModule } from '@agm/core';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { IonicStorageModule } from '@ionic/storage';
-import { ConferenceApp } from './app.component';
-import { AboutPage } from '../pages/about/about';
-import { ContactsPage } from '../pages/contacts/contacts';
-import { PopoverPage } from '../pages/about-popover/about-popover';
-import { AccountPage } from '../pages/account/account';
-import { LoginPage } from '../pages/login/login';
-import { EarthQuakePage } from '../pages/earth-quake/earth-quake';
-import { MapsPage } from '../pages/maps/maps';
-import { SchedulePage } from '../pages/schedule/schedule';
-import { ScheduleFilterPage } from '../pages/schedule-filter/schedule-filter';
-import { SessionDetailPage } from '../pages/session-detail/session-detail';
-import { SignupPage } from '../pages/signup/signup';
-import { SpeakerDetailPage } from '../pages/speaker-detail/speaker-detail';
-import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
-import { InventoryDetailPage } from '../pages/inventory-detail/inventory-detail';
-import { TabsPage } from '../pages/tabs-page/tabs-page';
-import { TutorialPage } from '../pages/tutorial/tutorial';
-import { SupportPage } from '../pages/support/support';
+  import { NgModule, ErrorHandler } from '@angular/core';
+  import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+  import { AgmCoreModule } from '@agm/core';
+  import { InAppBrowser } from '@ionic-native/in-app-browser';
+  import { SplashScreen } from '@ionic-native/splash-screen';
+  import { IonicStorageModule } from '@ionic/storage';
+  import { ConferenceApp } from './app.component';
+  import { AboutPage } from '../pages/about/about';
+  import { ContactsPage } from '../pages/contacts/contacts';
+  import { PopoverPage } from '../pages/about-popover/about-popover';
+//Car App Pages
+//import {DashBoradPage} form '../pages/carList/carList'
+//import {CarMaintenancePage} form '../pages/carMaintenance/maintenance'
+            //oil change, 
+//import {CarSchedulePage} form '../pages/carSchedule/scheddule'
+//import {CarInfPage} form '../pages/carInfo/info'
+            //Extended Warrty how long, Manu. Warrenty, plate, Vin, oil type, order (amazon), timing Chain, spark plugs, type ch
+//import {CarNotificationsPage} form '../pages/carNotification/notification'
+            //future oil changes
+            //tire rotation
 
-import { ConferenceData } from '../providers/conference-data';
-import { UserData } from '../providers/user-data';
-import { DataServiceProvider } from '../providers/data-service/data-service';
 
-import { AngularFireModule } from 'angularfire2';
-/* import { AngularFireDatabase } from 'angularfire2/database'; */
- 
- import {environment} from './environments/environment'; 
- 
+//Car App Pages Ends
+
+//Stock Management App
+//import {StockListPage} form '../pages/stockList/stockList'
+//import {??Page} form '../pages/??/??'
+//import {SettingPage} form '../settingsPages/??/??'   //should be moved to a global page and custom forms
+//Stock Management App Ends
+
+
+  import { AccountPage } from '../pages/account/account';
+  import { LoginPage } from '../pages/login/login';
+  import { EarthQuakePage } from '../pages/earth-quake/earth-quake';
+  import { MapsPage } from '../pages/maps/maps';
+  import { SchedulePage } from '../pages/schedule/schedule';
+  import { ScheduleFilterPage } from '../pages/schedule-filter/schedule-filter';
+  import { SessionDetailPage } from '../pages/session-detail/session-detail';
+  import { SignupPage } from '../pages/signup/signup';
+  import { SpeakerDetailPage } from '../pages/speaker-detail/speaker-detail';
+  import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
+  import { InventoryDetailPage } from '../pages/inventory-detail/inventory-detail';
+  import { TabsPage } from '../pages/tabs-page/tabs-page';
+  import { TutorialPage } from '../pages/tutorial/tutorial';
+  import { SupportPage } from '../pages/support/support';
+  import { ConferenceData } from '../providers/conference-data';
+  import { UserData } from '../providers/user-data';
+  import { DataServiceProvider } from '../providers/data-service/data-service';
+
+  import { AngularFireModule } from 'angularfire2';
+  /* import { AngularFireDatabase } from 'angularfire2/database'; */
+  
+  import {environment} from './environments/environment'; 
+  
 
 
 @NgModule({

@@ -50,6 +50,11 @@ export class ConferenceApp {
    { title: 'About', name: 'TabsPage', component: TabsPage, tabComponent: AboutPage, index: 3, icon: 'information-circle' },
    { title: 'List', name: 'TabsPage', component: TabsPage, tabComponent: SpeakerListPage, index: 4, icon: 'information-circle' }
   ];
+   CarPages: PageInterface[] = [
+    { title: 'List', name: 'AccountPage', component: AccountPage, icon: 'person' },
+    { title: 'Maintainance', name: 'SupportPage', component: SupportPage, icon: 'help' },
+    { title: 'Schedule', name: 'TabsPage', component: TabsPage, icon: 'log-out', logsOut: true }
+  ];
   loggedInPages: PageInterface[] = [
     { title: 'Account', name: 'AccountPage', component: AccountPage, icon: 'person' },
     { title: 'Support', name: 'SupportPage', component: SupportPage, icon: 'help' },

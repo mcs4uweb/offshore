@@ -36,7 +36,7 @@ public thename:string;
                   ],
     },
      {
-    "ref": "201216",
+    "ref": "456234",
 	  "location":"Costco #6662",
     "shipDate":"8/20/2017",
     "item": [{ 'id': 1, name:'Hair Dryer 2', 'date': '6/6/2016', 'qty':21, cost:12.99 },
@@ -45,8 +45,8 @@ public thename:string;
           ],
     },
      {
-    "ref": "201216",
-	  "location":"Sam's Club #4562",
+    "ref": "889011",
+	  "location":"Sam's Club #213",
     "shipDate":"8/20/2017",
     "item": [{ 'id': 1, name:'Hair Dryer 3 ', 'date': '6/6/2016', 'qty':21, cost:12.99 },
                 { 'id': 2, name:'Iron 3', 'date': '6/6/2016', 'qty':3, cost:6.50 },
@@ -66,7 +66,7 @@ public thename:string;
               constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public serviceProvider: DataServiceProvider,
-               public db: AngularFireDatabase 
+              public db: AngularFireDatabase 
              ){  }
 ngOnInit() {
      

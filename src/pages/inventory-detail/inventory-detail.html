@@ -38,22 +38,23 @@
   </ion-row>
 </ion-grid>
   
-<ion-item> 
+<div> 
   <ion-item-group *ngFor="let item of allCategories.transfers">
-       <div style="width:100%;background-color:crimson;width:100%;color:white;font-size:20px;">{{item.ref}} 
+       <div style="width:100%;background-color:crimson;width:100%;color:white;font-size:20px;padding:10px;">{{item.ref}} 
        </div>
-        <div class="col-5" style="color:#000;font-size:16px;font-weight:bold;clear:both;">
-          LOCATION 
-              {{item.location}} 
+       <div>
+        <div class="col-5" style="color:#ccc;font-size:16px;font-weight:bold;clear:both;">  LOCATION </div>
+       <div style="float:left;color:#000;font-size:16px;font-weight:bold;">  {{item.location}} </div>    
   
       </div>
-      <span *ngFor="let i of item.item" ion-item (click)="goToInventoryDetail(category)" >
+     
+      <span *ngFor="let i of item.item" ion-item   (click)="goToInventoryDetail(category)" >
         {{i.name}}  {{i.qty}} 
      <ion-badge  style="float: right;" > {{i.cost}} </ion-badge> </span>
      
     </ion-item-group>
 
-</ion-item>
+</div>
   </div>
 
  <ul>
