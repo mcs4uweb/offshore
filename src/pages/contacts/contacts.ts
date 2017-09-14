@@ -67,7 +67,7 @@ allCategories: any =
     console.log('ionViewDidLoad ContactsPage');
   }
   goToInventoryDetail(category: any) {
-    debugger
+    
     this.navCtrl.push(InventoryDetailPage, { category:  category });
   }
   itemDetail($event:any, team:any )

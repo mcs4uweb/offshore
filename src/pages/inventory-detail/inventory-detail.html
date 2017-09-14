@@ -34,17 +34,19 @@
     
     <ion-col style="color:#000;font-size:16px;font-weight:bold">
      8/20/2017
-    </  >
+    </ion-col>
   </ion-row>
 </ion-grid>
   
 <ion-item> 
   <ion-item-group *ngFor="let item of allCategories.transfers">
-       <ion-item-divider>  <span  style="background-color:crimson;width:100%;color:white;font-size:20px;">{{item.ref}}</span><br>
-    <span  style="color:#000;font-size:16px;font-weight:bold">
-   {{item.location}}</span>
+       <div style="width:100%;background-color:crimson;width:100%;color:white;font-size:20px;">{{item.ref}} 
+       </div>
+        <div class="col-5" style="color:#000;font-size:16px;font-weight:bold;clear:both;">
+          LOCATION 
+              {{item.location}} 
   
-      </ion-item-divider>
+      </div>
       <span *ngFor="let i of item.item" ion-item (click)="goToInventoryDetail(category)" >
         {{i.name}}  {{i.qty}} 
      <ion-badge  style="float: right;" > {{i.cost}} </ion-badge> </span>
