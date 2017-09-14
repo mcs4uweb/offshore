@@ -14,6 +14,17 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
 import { ContactsPage } from '../pages/contacts/contacts';
 import { SupportPage } from '../pages/support/support';
+
+
+//Car 
+import { DashboardPage } from '../pages/dashboard/dashboard'
+
+
+//Stock
+
+
+//Home Automation
+
  
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
@@ -51,7 +62,7 @@ export class ConferenceApp {
    { title: 'List', name: 'TabsPage', component: TabsPage, tabComponent: SpeakerListPage, index: 4, icon: 'information-circle' }
   ];
    CarPages: PageInterface[] = [
-    { title: 'List', name: 'AccountPage', component: AccountPage, icon: 'person' },
+    { title: 'List', name: 'DashboardPage', component: DashboardPage, icon: 'person' },
     { title: 'Maintainance', name: 'SupportPage', component: SupportPage, icon: 'help' },
     { title: 'Schedule', name: 'TabsPage', component: TabsPage, icon: 'log-out', logsOut: true }
   ];
