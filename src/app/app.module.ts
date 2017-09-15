@@ -50,11 +50,12 @@
   import { UserData } from '../providers/user-data';
   import { DataServiceProvider } from '../providers/data-service/data-service';
 
-  import { AngularFireModule } from 'angularfire2';
-  /* import { AngularFireDatabase } from 'angularfire2/database'; */
+ 
+ /* import { AngularFireModule } from 'angularfire2'; */
+  /*  import { AngularFireDatabase } from 'angularfire2/database';  */
   
-  import {environment} from './environments/environment'; 
-  
+  /*  import {environment} from './environments/environment';  */
+   
 
 
 @NgModule({
@@ -80,13 +81,10 @@
   ],
   imports: [
     BrowserModule,
-   AngularFireModule.initializeApp(environment.firebase),
-     
-   
-     
-    HttpModule,
-   
-    IonicModule.forRoot(ConferenceApp, {}, {
+   /*   AngularFireModule.initializeApp(environment.firebase), */
+   /*   AngularFireDatabase, */
+     HttpModule,
+     IonicModule.forRoot(ConferenceApp, {}, {
       links: [
         { component: TabsPage, name: 'TabsPage', segment: 'tabs-page' },
         { component: SchedulePage, name: 'Schedule', segment: 'schedule' },

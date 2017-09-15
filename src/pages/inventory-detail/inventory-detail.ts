@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-/* import {AngularFireDatabase} from 'angularfire2/database'; */
+ 
 
 import { DataServiceProvider} from'../../providers/data-service/data-service';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+/* import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database'; */
 /**
  * Generated class for the InventoryDetailPage page.
  *
@@ -20,7 +20,7 @@ export class InventoryDetailPage  implements OnInit  {
 public category: any;
 public users:any;
 public thename:string;
- items: FirebaseListObservable<any[]>;
+/*  items: FirebaseListObservable<any[]>; */
 
  allCategories: any = 
 {
@@ -66,7 +66,7 @@ public thename:string;
               constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public serviceProvider: DataServiceProvider,
-              public db: AngularFireDatabase 
+              
              ){  }
 ngOnInit() {
      
@@ -74,8 +74,8 @@ ngOnInit() {
     console.log(this.category );
     this.thename = this.category.name + " " ;
     // this.items = this.db.list('/users').subscribe(res => { this.users = res;}); 
-     this.items = this.db.list('/users');
-      console.log('trmp' +    this.items);
+    // this.items = this.db.list('/users');
+     // console.log('trmp' +    this.items);
   }
   ionViewDidLoad() {
    
