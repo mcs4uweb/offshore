@@ -16,10 +16,10 @@ import { ContactsPage } from '../pages/contacts/contacts';
 import { SupportPage } from '../pages/support/support';
 
 
-//Car 
-import { DashboardPage } from '../pages/dashboard/dashboard'
-
-
+//Car DashboardPage
+ 
+import {CarListPage} from '../pages/car-list/car-list'
+import {CarInfoPage} from '../pages/car-info/car-info'
 //Stock
 
 
@@ -62,7 +62,8 @@ export class ConferenceApp {
    { title: 'List', name: 'TabsPage', component: TabsPage, tabComponent: SpeakerListPage, index: 4, icon: 'information-circle' }
   ];
    CarPages: PageInterface[] = [
-    { title: 'List', name: 'DashboardPage', component: DashboardPage, icon: 'person' },
+    { title: 'List', name: 'CarListPage', component: CarListPage, icon: 'person' },
+     { title: 'Information', name: 'CarInfoPage', component: CarInfoPage, icon: 'help' },
     { title: 'Maintainance', name: 'SupportPage', component: SupportPage, icon: 'help' },
     { title: 'Schedule', name: 'TabsPage', component: TabsPage, icon: 'log-out', logsOut: true }
   ];

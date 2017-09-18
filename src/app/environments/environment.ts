@@ -8,5 +8,7 @@ export const environment = {
     storageBucket: "carionic-e1f2d.appspot.com",
     messagingSenderId: "585117608984"
 
-    } 
+    }, 
+  localHosturl:'http:\\localhost:8100',
+  productionUrl:'http:\\',
 }

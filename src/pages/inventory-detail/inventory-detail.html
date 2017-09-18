@@ -39,8 +39,8 @@
 </ion-grid>
   
 <div> 
-  <ion-item-group *ngFor="let item of allCategories.transfers">
-    <div style="clear:both;">
+  <ion-item-group *ngFor="let item of allCategories.transfers; let i = index" [attr.data-index]="i">
+    <div style="clear:both;"  (click)="showDetails(i)">
        <div  style="width:100%;background-color:#27408B ;width:100%;color:white;font-size:20px;padding:10px;">{{item.ref}} 
        </div>
        <div>
@@ -50,7 +50,7 @@
       </div>
   </div>
 
-     <div *ngIf="show">
+     <div *ngIf="show"  data-item="#i" >
       <span *ngFor="let i of item.item" ion-item   (click)="goToInventoryDetail(category)" >
         {{i.name}}  {{i.qty}} 
      <ion-badge  style="float: right;" > {{i.cost}} </ion-badge> </span>
@@ -62,9 +62,10 @@
 </div>
   </div>
 
- <ul>
+ <!-- <ul>
   <li class="text" *ngFor="let item of items | async">
     {{item.$value}}
   </li>
-</ul>
+</ul> -->
 </ion-content>
+

@@ -21,8 +21,9 @@
 //import {CarNotificationsPage} form '../pages/carNotification/notification'
             //future oil changes
             //tire rotation
-
-
+  import {CarListPage} from '../pages/car-list/car-list'
+  import {CarInfoPage} from '../pages/car-info/car-info'
+import { CarDetailPage } from '../pages/car-info/carDetail';
 //Car App Pages Ends
 
 //Stock Management App
@@ -47,10 +48,11 @@
   import { TutorialPage } from '../pages/tutorial/tutorial';
   import { SupportPage } from '../pages/support/support';
   import { ConferenceData } from '../providers/conference-data';
+
   import { UserData } from '../providers/user-data';
   import { DataServiceProvider } from '../providers/data-service/data-service';
-
- 
+ import { DataServiceCar } from '../providers/data-service/data-serviceCar';
+  import { DataServiceSmartCircle } from '../providers/data-service/data-serviceSmartCircle';
  /* import { AngularFireModule } from 'angularfire2'; */
   /*  import { AngularFireDatabase } from 'angularfire2/database';  */
   
@@ -77,7 +79,10 @@
     InventoryDetailPage,
     TabsPage,
     TutorialPage,
-    SupportPage 
+    SupportPage,
+    CarListPage,
+    CarInfoPage,
+    CarDetailPage,
   ],
   imports: [
     BrowserModule,
@@ -101,7 +106,10 @@
         { component: SupportPage, name: 'SupportPage', segment: 'support' },
         { component: LoginPage, name: 'LoginPage', segment: 'login' },
         { component: AccountPage, name: 'AccountPage', segment: 'account' },
-        { component: SignupPage, name: 'SignupPage', segment: 'signup' }
+        { component: SignupPage, name: 'SignupPage', segment: 'signup' },
+        { component: CarListPage, name: 'CarListPage', segment: 'carlist' },
+        { component: CarInfoPage, name: 'CarInfoPage', segment: 'carinfo' },
+        { component: CarDetailPage, name: 'CarDetailPage', segment: 'carDetail/:item' }
       ]
     }),
     IonicStorageModule.forRoot(),
@@ -129,7 +137,10 @@
     InventoryDetailPage,
     TabsPage,
     TutorialPage,
-    SupportPage
+    SupportPage,
+    CarListPage,
+    CarInfoPage,
+    CarDetailPage,
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
@@ -137,7 +148,9 @@
     UserData,
     InAppBrowser,
     SplashScreen,
-    DataServiceProvider
+    DataServiceProvider,
+    DataServiceCar,
+    DataServiceSmartCircle
   ]
 })
 export class AppModule { }
