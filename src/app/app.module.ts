@@ -1,5 +1,9 @@
   import { BrowserModule } from '@angular/platform-browser';
   import { HttpModule } from '@angular/http';
+  import { AngularFireModule } from 'angularfire2';
+  import { AngularFireDatabaseModule } from 'angularfire2/database';
+ 
+ 
 
   import { NgModule, ErrorHandler } from '@angular/core';
   import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -53,10 +57,10 @@ import { CarDetailPage } from '../pages/car-info/carDetail';
   import { DataServiceProvider } from '../providers/data-service/data-service';
  import { DataServiceCar } from '../providers/data-service/data-serviceCar';
   import { DataServiceSmartCircle } from '../providers/data-service/data-serviceSmartCircle';
- /* import { AngularFireModule } from 'angularfire2'; */
-  /*  import { AngularFireDatabase } from 'angularfire2/database';  */
-  
-  /*  import {environment} from './environments/environment';  */
+ /* import { AngularFireModule } from 'angularfire2';
+   import { AngularFireDatabase } from 'angularfire2/database'; 
+  */ 
+   import {environment} from './environments/environment'; 
    
 
 
@@ -86,8 +90,8 @@ import { CarDetailPage } from '../pages/car-info/carDetail';
   ],
   imports: [
     BrowserModule,
-   /*   AngularFireModule.initializeApp(environment.firebase), */
-   /*   AngularFireDatabase, */
+     AngularFireModule.initializeApp(environment.firebase), 
+     AngularFireDatabaseModule,
      HttpModule,
      IonicModule.forRoot(ConferenceApp, {}, {
       links: [
