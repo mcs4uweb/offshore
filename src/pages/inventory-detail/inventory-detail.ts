@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  import * as $ from 'jquery';
 
 import { DataServiceProvider} from'../../providers/data-service/data-service';
-/* import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database'; */
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 /* import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database'; */
 /**
  * Generated class for the InventoryDetailPage page.
@@ -22,7 +22,7 @@ public category: any;
 public users:any;
 public thename:string;
  
-/*  items: FirebaseListObservable<any[]>; */
+ users2: FirebaseListObservable<any[]>;
 public show:boolean=true;
  allCategories: any = 
 {
@@ -68,15 +68,15 @@ public show:boolean=true;
               constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public serviceProvider: DataServiceProvider,
-              
+              public db: AngularFireDatabase
              ){  }
 ngOnInit() {
      $('#elemId').width();
     this.category = this.navParams.data.category;
     console.log(this.category );
     this.thename = this.category.name + " " ;
-    // this.items = this.db.list('/users').subscribe(res => { this.users = res;}); 
-    // this.items = this.db.list('/users');
+     console.log( this.db.list('/ticker').subscribe(res => { this.users = res;})); 
+     this.users2 = this.db.list('/users');
      // console.log('trmp' +    this.items);
   }
   ionViewDidLoad() {
