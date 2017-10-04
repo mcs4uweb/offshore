@@ -20,6 +20,15 @@
           {{p.title}}
         </button>
       </ion-list>
+      <ion-list>
+        <ion-list-header>
+         Stock App
+        </ion-list-header>
+        <button ion-item menuClose *ngFor="let p of StockPages" (click)="openPage(p)">
+          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
+          {{p.title}}
+        </button>
+  </ion-list>
  <ion-list>
         <ion-list-header>
          Car Maintenance App
@@ -28,7 +37,7 @@
           <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
           {{p.title}}
         </button>
-      </ion-list>
+  </ion-list>
       <ion-list>
         <ion-list-header>
           Account

@@ -1,0 +1,41 @@
+<!--
+  Generated template for the StockAddTickerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+ 
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Stock Add/List View</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ Add Ticker
+  
+    <form #stockForm="ngForm" novalidate>
+	  	 
+         <ion-item><ion-label   color="primary">Ticker</ion-label><ion-input [(ngModel)]='stock.ticker' name='ticker' type=text #ticker='ngModel' required></ion-input></ion-item>
+        <p ion-text [hidden]="ticker.valid || submitted == false" color="danger" padding-left>
+					Ticker is required
+        </p>
+       <ion-item><ion-label  color="primary">Last Quote</ion-label><ion-input [(ngModel)]='stock.last' name='last' type=text #last='ngModel' required></ion-input></ion-item>
+        <p ion-text [hidden]="last.valid || submitted == false" color="danger" padding-left>
+					Last quote is required
+        </p>
+        <ion-item><ion-label  color="primary">Status</ion-label><ion-input [(ngModel)]='stock.status' name='status' type=text #status='ngModel' required></ion-input></ion-item>
+        <ion-item><ion-label  color="primary">Ticker Desc</ion-label><ion-input [(ngModel)]='stock.tickerDesc' name='tickerDesc' type=text #tickerDesc='ngModel'  ></ion-input></ion-item>
+        <ion-item><ion-label  color="primary">Filled At</ion-label><ion-input [(ngModel)]='stock.filledAt' name='filledAt' type=text #filledAt='ngModel'  ></ion-input></ion-item>
+        <ion-item><ion-label  color="primary">Filled At Out</ion-label><ion-input [(ngModel)]='stock.filledAtOut' name='filledAtOut' type=text #filledAtOut='ngModel'  ></ion-input></ion-item>
+        <ion-item><ion-label  color="primary">Qty</ion-label><ion-input [(ngModel)]='stock.qty' name='qty' type=text #qty='ngModel'  ></ion-input></ion-item>
+       
+       
+        <div padding>
+			<button ion-button (click)="onCreate(stockForm)" type="submit" block>Create</button>
+		</div>
+	</form>
+</ion-content>

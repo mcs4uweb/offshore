@@ -21,7 +21,7 @@ import { SupportPage } from '../pages/support/support';
 import {CarListPage} from '../pages/car-list/car-list'
 import {CarInfoPage} from '../pages/car-info/car-info'
 //Stock
-
+import {StockAddTickerPage} from '../pages/stock-add-ticker/stock-add-ticker'
 
 //Home Automation
 
@@ -66,6 +66,10 @@ export class ConferenceApp {
      { title: 'Information', name: 'CarInfoPage', component: CarInfoPage, icon: 'help' },
     { title: 'Maintainance', name: 'SupportPage', component: SupportPage, icon: 'help' },
     { title: 'Schedule', name: 'TabsPage', component: TabsPage, icon: 'log-out', logsOut: true }
+  ];
+  StockPages: PageInterface[] = [
+    { title: 'Add Stock', name: 'StockAddTickerPage', component: StockAddTickerPage, icon: 'stock' },
+    
   ];
   loggedInPages: PageInterface[] = [
     { title: 'Account', name: 'AccountPage', component: AccountPage, icon: 'person' },

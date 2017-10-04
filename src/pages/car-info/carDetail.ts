@@ -27,7 +27,8 @@ public car:any;
 ngOnInit() {
     this.item = this.navParams.data.item;
 }
- onSignup(form: NgForm) {
+onCreate(form: NgForm)
+{  
     this.submitted = true;
 debugger
    let tt = this.carData;

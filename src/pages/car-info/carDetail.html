@@ -12,28 +12,23 @@
      Car Details
   
     <form #carForm="ngForm" novalidate>
-		<ion-list no-lines>
-			<ion-item>
-				<ion-label stacked color="primary">Username</ion-label>
-				<ion-input [(ngModel)]="carData.username" name="username" type="text" #username="ngModel" required value="{{item.make}}">
-				</ion-input>
-			</ion-item>
-			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
-				Username is required
-			</p>
-
-			<ion-item>
-				<ion-label stacked color="primary">Password</ion-label>
-				<ion-input [(ngModel)]="carData.password" name="password" type="password" #password="ngModel" required>
-				</ion-input>
-			</ion-item>
-			<p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
-				Password is required
-			</p>
-		</ion-list>
-
+	  	<ion-item><ion-label   color="primary">VIN</ion-label><ion-input  [(ngModel)]='carData.VIN' name='VIN' type=text #VIN='ngModel' required></ion-input></ion-item>
+			<p ion-text [hidden]="VIN.valid || submitted == false" color="danger" padding-left>
+					VIN is required
+				</p>
+			<ion-item><ion-label  color="primary">year</ion-label><ion-input [(ngModel)]='carData.year' name='year' type=text #year='ngModel' required></ion-input></ion-item>
+			<ion-item><ion-label  color="primary">Model Code</ion-label><ion-input [(ngModel)]='carData.modelCode' name='modelCode' type=text #modelCode='ngModel' required></ion-input></ion-item>
+			<ion-item><ion-label  color="primary">Engine Code</ion-label><ion-input [(ngModel)]='carData.engineCode' name='engineCode' type=text #engineCode='ngModel' required></ion-input></ion-item>
+			<ion-item><ion-label  color="primary">Engine Size</ion-label><ion-input [(ngModel)]='carData.EngineSize' name='EngineSize' type=text #EngineSize='ngModel' required></ion-input></ion-item>
+			<ion-item><ion-label  color="primary">Transmission Code</ion-label><ion-input [(ngModel)]='carData.TransmissionCode' name='TransmissionCode' type=text #TransmissionCode='ngModel' required></ion-input></ion-item>
+			<ion-item><ion-label  color="primary">Description</ion-label><ion-input [(ngModel)]='carData.Description' name='Description' type=text #Description='ngModel' required></ion-input></ion-item>
+			<ion-item><ion-label  color="primary">Manufacture Warrenty</ion-label><ion-input [(ngModel)]='carData.manufactureWarrenty' name='manufactureWarrenty' type=text #manufactureWarrenty='ngModel' required></ion-input></ion-item>
+			<ion-item><ion-label  color="primary">Enhanced Coverage</ion-label><ion-input [(ngModel)]='carData.enhancedCoverage' name='enhancedCoverage' type=text #enhancedCoverage='ngModel' required></ion-input></ion-item>
+			<ion-item><ion-label  color="primary">Enhanced Milage End</ion-label><ion-input [(ngModel)]='carData.enhancedMilageEnd' name='enhancedMilageEnd' type=text #enhancedMilageEnd='ngModel' required></ion-input></ion-item>
+			<ion-item><ion-label  color="primary">Enhanced Coverage Period</ion-label><ion-input [(ngModel)]='carData.enhancedCoveragePeriod' name='enhancedCoveragePeriod' type=text #enhancedCoveragePeriod='ngModel' required></ion-input></ion-item>
+		 
 		<div padding>
-			<button ion-button (click)="onSignup(carForm)" type="submit" block>Create</button>
+			<button ion-button (click)="onCreate(carForm)" type="submit" block>Create</button>
 		</div>
 	</form>
  

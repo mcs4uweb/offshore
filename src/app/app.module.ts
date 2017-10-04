@@ -25,6 +25,7 @@
 //import {CarNotificationsPage} form '../pages/carNotification/notification'
             //future oil changes
             //tire rotation
+  import {StockAddTickerPage} from '../pages/stock-add-ticker/stock-add-ticker'
   import {CarListPage} from '../pages/car-list/car-list'
   import {CarInfoPage} from '../pages/car-info/car-info'
 import { CarDetailPage } from '../pages/car-info/carDetail';
@@ -56,6 +57,7 @@ import { CarDetailPage } from '../pages/car-info/carDetail';
   import { UserData } from '../providers/user-data';
   import { DataServiceProvider } from '../providers/data-service/data-service';
  import { DataServiceCar } from '../providers/data-service/data-serviceCar';
+ import { DataServiceStock } from '../providers/data-service/data-serviceStock';
   import { DataServiceSmartCircle } from '../providers/data-service/data-serviceSmartCircle';
  /* import { AngularFireModule } from 'angularfire2';
    import { AngularFireDatabase } from 'angularfire2/database'; 
@@ -87,6 +89,7 @@ import { CarDetailPage } from '../pages/car-info/carDetail';
     CarListPage,
     CarInfoPage,
     CarDetailPage,
+    StockAddTickerPage
   ],
   imports: [
     BrowserModule,
@@ -113,7 +116,8 @@ import { CarDetailPage } from '../pages/car-info/carDetail';
         { component: SignupPage, name: 'SignupPage', segment: 'signup' },
         { component: CarListPage, name: 'CarListPage', segment: 'carlist' },
         { component: CarInfoPage, name: 'CarInfoPage', segment: 'carinfo' },
-        { component: CarDetailPage, name: 'CarDetailPage', segment: 'carDetail/:item' }
+        { component: CarDetailPage, name: 'CarDetailPage', segment: 'carDetail/:item' },
+        { component: StockAddTickerPage, name: 'StockAddTickerPage', segment: 'stockAdd' },
       ]
     }),
     IonicStorageModule.forRoot(),
@@ -145,6 +149,7 @@ import { CarDetailPage } from '../pages/car-info/carDetail';
     CarListPage,
     CarInfoPage,
     CarDetailPage,
+    StockAddTickerPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
@@ -154,6 +159,7 @@ import { CarDetailPage } from '../pages/car-info/carDetail';
     SplashScreen,
     DataServiceProvider,
     DataServiceCar,
+    DataServiceStock,
     DataServiceSmartCircle
   ]
 })
