@@ -27,7 +27,14 @@
         <p ion-text [hidden]="last.valid || submitted == false" color="danger" padding-left>
 					Last quote is required
         </p>
-        <ion-item><ion-label  color="primary">Status</ion-label><ion-input [(ngModel)]='stock.status' name='status' type=text #status='ngModel' required></ion-input></ion-item>
+        <ion-item>
+        <ion-label  color="primary">Status</ion-label>
+        <ion-select  [(ngModel)]="stock.status" name="status" id="status">
+          <ion-option value="active">Active</ion-option>
+          <ion-option value="pending">Pending</ion-option>
+        </ion-select>
+        </ion-item>
+       <!--  <ion-item><ion-label  color="primary">Status</ion-label><ion-input [(ngModel)]='stock.status' name='status' type=text #status='ngModel' required></ion-input></ion-item> -->
         <ion-item><ion-label  color="primary">Ticker Desc</ion-label><ion-input [(ngModel)]='stock.tickerDesc' name='tickerDesc' type=text #tickerDesc='ngModel'  ></ion-input></ion-item>
         <ion-item><ion-label  color="primary">Filled At</ion-label><ion-input [(ngModel)]='stock.filledAt' name='filledAt' type=text #filledAt='ngModel'  ></ion-input></ion-item>
         <ion-item><ion-label  color="primary">Filled At Out</ion-label><ion-input [(ngModel)]='stock.filledAtOut' name='filledAtOut' type=text #filledAtOut='ngModel'  ></ion-input></ion-item>
@@ -35,7 +42,20 @@
        
        
         <div padding>
-			<button ion-button (click)="onCreate(stockForm)" type="submit" block>Create</button>
+			<button ion-button  color="secondary" (click)="onCreate(stockForm)" type="submit" block>Create</button>
 		</div>
-	</form>
+  </form>
+  
+    <!--  <div *ngIf="show"  data-item="#i" > -->
+   <ion-list>
+      <span *ngFor="let i of stocks2 | async"  ion-item   class="item item-icon-left item-icon-right" (click)="updateTicker(i)" >
+        {{i.ticker}}   
+   
+     <ion-badge   style="float: right;" > {{i.qty}} </ion-badge>
+      <ion-badge color="secondary"  style="float: right;padding-right:5px;" > {{i.status}} </ion-badge>
+    
+    </span>
+  </ion-list>
+    <!--  </div> -->
+    
 </ion-content>

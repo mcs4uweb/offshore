@@ -1,5 +1,5 @@
 import { Injectable, OnInit  } from '@angular/core';
-
+import { AngularFireDatabase  } from 'angularfire2/database';
 import 'rxjs/add/operator/map';
 import { Http, Headers, RequestOptions, Response  } from '@angular/http';
 import { UserOptions } from '../../interfaces/user-options';
@@ -20,7 +20,8 @@ options = new RequestOptions({
   });
  private baseUrl:string ='http://offshoresurf.azurewebsites.net';
  
- constructor(private http: Http ) { }
+ constructor(private http: Http,
+             private db: AngularFireDatabase ) { }
  ngOnInit() {
         this.headers.append('Accept', 'application/json');
         this.headers.append('Content-Type', 'application/json');
@@ -35,10 +36,14 @@ carUpdate(form:UserOptions)
 {
    return null;
 } */
-  getStocks(): Observable<any[]> {
+  getStocks2(): Observable<any[]> {
          return this.http.get(this.baseUrl + '/api/TowerService/GetLocation/').map((response: Response) => response.json());
 
   }
+  getStocks(): Observable<any[]> {
+        return  this.db.list('/ticker').map((response: Response) => response.json());
+
+}
 }
    
 
