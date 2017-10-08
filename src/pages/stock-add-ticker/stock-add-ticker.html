@@ -48,12 +48,13 @@
   
     <!--  <div *ngIf="show"  data-item="#i" > -->
    <ion-list>
-      <span *ngFor="let i of stocks2 | async"  ion-item   class="item item-icon-left item-icon-right" (click)="updateTicker(i)" >
+      <span *ngFor="let i of stocks2 | async"  ion-item   class="item item-icon-left item-icon-right"   >
         {{i.ticker}}   
-   
+      <input type="text" name="{{i.$key}}" value="{{i.filledAt}}" (blur)="updateFillAt($event.target.value, i)" />
      <ion-badge   style="float: right;" > {{i.qty}} </ion-badge>
-      <ion-badge color="secondary"  style="float: right;padding-right:5px;" > {{i.status}} </ion-badge>
-    
+      <ion-badge color="secondary" style="float: right;padding-right:5px;"   (click)="updateTicker(i)"> {{i.status}} </ion-badge>
+      <ion-icon name="trash" style="float: right;"  (click)="removeTicker(i)"></ion-icon>
+      <ion-icon name="checkmark" style="float: right;"  (click)="updateFillAt(i)"></ion-icon>
     </span>
   </ion-list>
     <!--  </div> -->

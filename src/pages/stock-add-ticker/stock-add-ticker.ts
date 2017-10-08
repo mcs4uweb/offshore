@@ -25,7 +25,7 @@ export class StockAddTickerPage  implements OnInit  {
                        { ticker: 'bbb', tickerDesc: 'desc bbbb', filledAt:1, filledAtOut:1, qty:'500', status:'active', last:0 }
   
 ]
-  stock: ITicker = { ticker: '', tickerDesc: '', filledAt:1, filledAtOut:1, qty:'', status:'', last:0 };
+  stock: ITicker = { ticker: '', tickerDesc: '', filledAt:1, filledAtOut:1, qty:'1', status:'', last:0 };
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
               public db: AngularFireDatabase
@@ -42,11 +42,21 @@ export class StockAddTickerPage  implements OnInit  {
    
    
 }
+updateFillAt(name: string,ticker: any)
+{
+   
+  console.log(name + " " + ticker );
+  ticker.filledAt = name;
+  this.db.object('/ticker/' + ticker.$key).update(ticker); 
+}
+removeTicker(ticker: any)
+{  
+  this.db.object('/ticker/' + ticker.$key).remove();  
+}
 updateTicker(ticker: any)
 {  
   ticker.status = "Pending";
-  this.db.object('/ticker/' + ticker.$key) 
-  .update(ticker); 
+  this.db.object('/ticker/' + ticker.$key).update(ticker); 
 }
 
   onCreate(form: NgForm)

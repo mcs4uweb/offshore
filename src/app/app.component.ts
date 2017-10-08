@@ -68,7 +68,7 @@ export class ConferenceApp {
     { title: 'Schedule', name: 'TabsPage', component: TabsPage, icon: 'log-out', logsOut: true }
   ];
   StockPages: PageInterface[] = [
-    { title: 'Add Stock', name: 'StockAddTickerPage', component: StockAddTickerPage, icon: 'stock' },
+    { title: 'Add Stock', name: 'StockAddTickerPage', component: StockAddTickerPage, icon: 'time' },
     
   ];
   loggedInPages: PageInterface[] = [
