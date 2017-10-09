@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ITicker } from '../../model/stock'
 import { NgForm } from '@angular/forms'; 
+import * as $ from 'jquery';
 /* import { DataServiceStock} from'../../providers/data-service/data-serviceStock'; */
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 /**
@@ -46,7 +47,7 @@ updateFillAt(name: string,ticker: any)
 {
    
   console.log(name + " " + ticker );
-  ticker.filledAt = name;
+  ticker.filledAt = name.replace("$","");
   this.db.object('/ticker/' + ticker.$key).update(ticker); 
 }
 removeTicker(ticker: any)
@@ -55,7 +56,14 @@ removeTicker(ticker: any)
 }
 updateTicker(ticker: any)
 {  
-  ticker.status = "Pending";
+  debugger
+  if(ticker.status == "Pending")
+  {
+    ticker.status = "active";
+  }else{
+    ticker.status = "Pending";
+  }
+  
   this.db.object('/ticker/' + ticker.$key).update(ticker); 
 }
 
@@ -72,3 +80,8 @@ updateTicker(ticker: any)
     }
 
 }
+
+$(document).delegate('.openDetails', 'click', function () {
+  $(this).next('.theone').toggle(); 
+ 
+})

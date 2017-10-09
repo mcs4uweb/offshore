@@ -49,13 +49,22 @@
     <!--  <div *ngIf="show"  data-item="#i" > -->
    <ion-list>
       <span *ngFor="let i of stocks2 | async"  ion-item   class="item item-icon-left item-icon-right"   >
-        {{i.ticker}}   
-      <input type="text" name="{{i.$key}}" value="{{i.filledAt}}" (blur)="updateFillAt($event.target.value, i)" />
-     <ion-badge   style="float: right;" > {{i.qty}} </ion-badge>
-      <ion-badge color="secondary" style="float: right;padding-right:5px;"   (click)="updateTicker(i)"> {{i.status}} </ion-badge>
+       <b> {{i.ticker}}</b>   Filled At: <ion-badge>   {{i.filledAt==1 ? "" : i.filledAt}}</ion-badge> Item is: {{i.status}}
+     
+       Qty <ion-badge>   {{i.qty}} </ion-badge>Total <ion-badge>{{ (i.qty| number) *  (i.filledAt| number)  }}</ion-badge>
+   
       <ion-icon name="trash" style="float: right;"  (click)="removeTicker(i)"></ion-icon>
-      <ion-icon name="checkmark" style="float: right;"  (click)="updateFillAt(i)"></ion-icon>
+      <div  style="float: right;"  class="openDetails" >Edit</div>
+      <div  style="display:none;padding:10px;background-color: #f1f1f1" class="theone" \ >
+        Filled At
+
+        <input style="width:100px;" type="text" name="{{i.$key}}" value="${{i.filledAt}}" (blur)="updateFillAt($event.target.value, i)" />
+        Status:
+        <ion-badge color="secondary"    (click)="updateTicker(i)"> {{i.status}} </ion-badge>
+       </div>
     </span>
+  
+
   </ion-list>
     <!--  </div> -->
     
