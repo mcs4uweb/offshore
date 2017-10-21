@@ -4,7 +4,7 @@ export interface ITicker
     tickerDesc: string,
     filledAt: number,
     filledAtOut: number,
-    qty: string,
+    qty: number,
     status: string,
     last: number,
 }

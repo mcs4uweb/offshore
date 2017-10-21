@@ -22,11 +22,11 @@ export class StockAddTickerPage  implements OnInit  {
   stocks2: FirebaseListObservable<any[]>;
   //stocks2: FirebaseListObservable<any[]>; 
   submitted = false;
-  stocks: ITicker[] = [{ ticker: 'aaa', tickerDesc: 'desc', filledAt:1, filledAtOut:1, qty:'500', status:'active', last:0 },
-                       { ticker: 'bbb', tickerDesc: 'desc bbbb', filledAt:1, filledAtOut:1, qty:'500', status:'active', last:0 }
+  stocks: ITicker[] = [{ ticker: 'aaa', tickerDesc: 'desc', filledAt:1, filledAtOut:1, qty:3, status:'active', last:0 },
+                       { ticker: 'bbb', tickerDesc: 'desc bbbb', filledAt:1, filledAtOut:1, qty:7, status:'active', last:0 }
   
 ]
-  stock: ITicker = { ticker: '', tickerDesc: '', filledAt:1, filledAtOut:1, qty:'1', status:'', last:0 };
+  stock: ITicker = { ticker: '', tickerDesc: '', filledAt:1, filledAtOut:1, qty:1, status:'', last:0 };
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
               public db: AngularFireDatabase
@@ -70,8 +70,7 @@ updateTicker(ticker: any)
   onCreate(form: NgForm)
   {  
       this.submitted = true;
-   
-     let ticker = this.stock;
+      let ticker = this.stock;
      
       if (form.valid) {
         this.stocks2.push(ticker);
@@ -84,4 +83,10 @@ updateTicker(ticker: any)
 $(document).delegate('.openDetails', 'click', function () {
   $(this).next('.theone').toggle(); 
  
-})
+});
+
+$(document).delegate('#openForm', 'click', function () {
+  $(this).next().toggle(); 
+ 
+});
+
