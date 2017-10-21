@@ -7,4 +7,7 @@ export interface ITicker
     qty: number,
     status: string,
     last: number,
+   /*  notes?: string,
+    ipoDate?:Date,
+    ipoExpectedPrice?:number, */
 }

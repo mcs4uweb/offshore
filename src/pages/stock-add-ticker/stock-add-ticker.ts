@@ -22,7 +22,7 @@ export class StockAddTickerPage  implements OnInit  {
   stocks2: FirebaseListObservable<any[]>;
   //stocks2: FirebaseListObservable<any[]>; 
   submitted = false;
-  stocks: ITicker[] = [{ ticker: 'aaa', tickerDesc: 'desc', filledAt:1, filledAtOut:1, qty:3, status:'active', last:0 },
+  stocks: ITicker[] = [{ ticker: 'aaa', tickerDesc: 'desc', filledAt:1, filledAtOut:1, qty:3, status:'active', last:0  },
                        { ticker: 'bbb', tickerDesc: 'desc bbbb', filledAt:1, filledAtOut:1, qty:7, status:'active', last:0 }
   
 ]
@@ -45,8 +45,7 @@ export class StockAddTickerPage  implements OnInit  {
 }
 updateFillAt(name: string,ticker: any)
 {
-   
-  console.log(name + " " + ticker );
+  //console.log(name + " " + ticker );
   ticker.filledAt = name.replace("$","");
   this.db.object('/ticker/' + ticker.$key).update(ticker); 
 }
@@ -84,7 +83,11 @@ $(document).delegate('.openDetails', 'click', function () {
   $(this).next('.theone').toggle(); 
  
 });
-
+$(document).delegate('.openDetails2', 'click', function () {
+  console.log('closest')
+  $(this).parent().parent().next('.theone2').toggle(); 
+ 
+});
 $(document).delegate('#openForm', 'click', function () {
   $(this).next().toggle(); 
  

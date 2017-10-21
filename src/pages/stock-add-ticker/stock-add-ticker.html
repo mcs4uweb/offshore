@@ -78,5 +78,43 @@
 
   </ion-list>
     <!--  </div> -->
-    
+    <div  *ngFor="let i of stocks2 | async">
+    <div style="margin: 15px;clear:both;">
+     
+        <div style="float: left; display:flex">
+          <ion-icon style="color: black; font-size: 30px; margin: auto"  >{{i.ticker}}</ion-icon>
+        
+          <div style="padding-left: 5px; margin: auto">
+            <div style= "font-size: 120%;">Description</div>
+            <div>Status <ion-badge>   {{i.status}} </ion-badge></div>
+          </div>
+          <div style="padding-left: 130px;  float:right">
+            <div style= "font-size: 120%;"> </div>
+            <div>  </div>
+          </div>
+         
+        </div>
+    <div style="float: rtigh; display:flex">
+      <button  ion-button  color="secondary"    style="float: right;height:24px;width:auto;"  class="openDetails2" >Edit</button>
+      <button  ion-button  color="primary"    style="float: right;height:24px;width:auto;"  class="openDetails2" >Delete</button>
+    </div>
+        <div style="clear: both; float:left; display: flex">
+          <div style="width: 40px; text-align:center">
+            <ion-icon style="color: black; font-size: 20px; margin: auto" name="remove"></ion-icon>
+          </div>
+          <span style=" padding-left: 5px; margin: auto">last: $8.34, Up 30%</span>
+          <span style=" padding-left: 5px; margin: auto; margin-left: 10px">Filled At  {{i.filledAt==1 ? "" : i.filledAt}}</span>
+        </div>
+      </div>
+      <!-- hidden form -->
+      <div  style="display:none;padding:10px;background-color: #f1f1f1;clear:both" class="theone2" \ >
+        Filled At
+
+        <input style="width:100px;" type="text" name="{{i.$key}}" value="{{i.filledAt}}" (blur)="updateFillAt($event.target.value, i)" />
+        Status:
+        <ion-badge color="secondary"    (click)="updateTicker(i)"> {{i.status}} </ion-badge>
+   
+      </div>
+    <div style="height:10px;clear:both;border-bottom:1px solid #ccc;"> </div>
+    </div>
 </ion-content>
